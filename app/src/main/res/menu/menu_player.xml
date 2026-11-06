@@ -1,0 +1,73 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_study_workspace" android:title="@string/study_workspace" />
+    <item android:id="@+id/action_undo_seek" android:title="@string/study_undo_seek" />
+    <item android:id="@+id/action_subtitle_studio" android:title="@string/subtitle_studio" />
+    <item android:id="@+id/action_precision" android:title="@string/precision_playback" />
+    <item android:id="@+id/action_diagnostics" android:title="@string/playback_diagnostics" />
+    <item android:id="@+id/action_focus_mode" android:title="@string/study_mode" />
+    <item android:id="@+id/action_go_to_time" android:title="@string/go_to_time" />
+    <item
+        android:id="@+id/action_ab_loop"
+        android:title="@string/ab_loop"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_bookmark"
+        android:title="@string/bookmark"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_bookmarks"
+        android:title="@string/bookmarks_list"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_trim"
+        android:title="@string/trim_video"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_screenshot"
+        android:title="@string/screenshot"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_audio_boost"
+        android:title="@string/audio_boost"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_equalizer"
+        android:title="@string/equalizer"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_night_mode"
+        android:title="@string/night_mode"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_kids_lock"
+        android:title="@string/kids_lock"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_background_play"
+        android:title="@string/background_play"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_orientation_lock"
+        android:title="@string/orientation_lock"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_decoder"
+        android:title="@string/decoder"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_info"
+        android:title="@string/video_info"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/tool_queue" android:title="@string/queue" />
+    <item android:id="@+id/tool_lock" android:title="@string/lock" />
+    <item android:id="@+id/tool_shuffle" android:title="@string/shuffle" />
+    <item android:id="@+id/tool_repeat" android:title="@string/repeat" />
+    <item android:id="@+id/tool_ratio" android:title="@string/aspect_ratio" />
+    <item android:id="@+id/tool_audio" android:title="@string/audio_track" />
+    <item android:id="@+id/tool_timer" android:title="@string/sleep_timer" />
+    <item android:id="@+id/tool_pip" android:title="@string/player_pip" />
+    <item android:id="@+id/tool_rotate" android:title="@string/rotate_screen" />
+</menu>

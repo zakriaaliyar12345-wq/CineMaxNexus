@@ -1,0 +1,33 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_selection_playlist"
+        android:title="@string/add_to_playlist"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_selection_favorite"
+        android:title="@string/action_favorites"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_selection_share"
+        android:title="@string/share"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_selection_private"
+        android:title="@string/add_to_private"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_selection_delete"
+        android:title="@string/delete_from_device"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_select_all"
+        android:title="@string/select_all"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_selection_close"
+        android:title="@string/clear_selection"
+        app:showAsAction="never" />
+
+</menu>

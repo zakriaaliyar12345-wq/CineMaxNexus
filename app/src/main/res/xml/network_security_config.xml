@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Media playback is the only network traffic this app generates: there are no
+  credentials, no account calls and no analytics to protect in transit.
+
+  Android blocks plain http:// by default on API 28+, which silently broke the
+  player's "Play network stream" feature for exactly the sources people use it
+  for - LAN devices, local media servers, IP cameras and test endpoints - and
+  surfaced as a bare "Couldn't play this video" with no hint as to why. https
+  URLs are unaffected either way.
+
+  Cleartext is therefore permitted deliberately and narrowly scoped to media
+  fetching, rather than left to look like a security bug. If account or
+  credential traffic is ever added, it must use https and this file should be
+  tightened to domain-config entries for those hosts.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>

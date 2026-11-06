@@ -1,0 +1,356 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/library_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/nexus_black">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:titleTextColor="@color/nexus_text"
+        app:subtitleTextColor="@color/nexus_accent" />
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/nexus_black"
+        app:elevation="0dp">
+            <FrameLayout android:id="@+id/cinema_hero" android:layout_width="match_parent" android:layout_height="260dp" android:layout_marginHorizontal="16dp" android:layout_marginBottom="14dp" android:background="@drawable/bg_aurora" android:clipToOutline="true" app:layout_scrollFlags="scroll">
+                <ImageView android:id="@+id/hero_art" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:contentDescription="@null"/>
+                <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/bg_cinema_scrim"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:padding="20dp" android:orientation="vertical" android:gravity="bottom">
+                    <TextView android:id="@+id/hero_eyebrow" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/cinema_eyebrow" android:textColor="@color/nexus_accent" android:letterSpacing="0.16" android:textSize="10sp"/>
+                    <TextView android:id="@+id/hero_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/cinema_headline" android:textColor="@color/nexus_text" android:textSize="28sp" android:fontFamily="sans-serif-medium" android:maxLines="2" android:ellipsize="end"/>
+                    <TextView android:id="@+id/library_metrics" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/hero_note" android:textColor="@color/nexus_text_secondary" android:textSize="12sp"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp">
+                        <com.google.android.material.button.MaterialButton android:id="@+id/hero_play" android:layout_width="wrap_content" android:layout_height="52dp" android:text="@string/open_video" app:icon="@drawable/ic_play" app:cornerRadius="26dp"/>
+                        <com.google.android.material.button.MaterialButton android:id="@+id/quick_open" style="@style/Widget.Material3.Button.TextButton" android:layout_width="48dp" android:layout_height="52dp" android:layout_marginStart="4dp" android:contentDescription="@string/open_video" app:icon="@drawable/ic_folder" app:iconPadding="0dp" app:iconGravity="textStart"/>
+                        <com.google.android.material.button.MaterialButton android:id="@+id/quick_stream" style="@style/Widget.Material3.Button.TextButton" android:layout_width="wrap_content" android:layout_height="52dp" android:text="@string/quick_stream"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+            <LinearLayout
+        android:id="@+id/continue_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_scrollFlags="scroll">
+                <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="@string/continue_watching"
+        android:textColor="@color/nexus_text"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+                <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/continue_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:clipToPadding="false"
+        android:scrollbars="none" />
+            </LinearLayout>
+            <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="12dp"
+        android:orientation="horizontal">
+                <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/library_heading"
+        android:textColor="@color/nexus_text"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+                <TextView
+        android:id="@+id/library_summary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/nexus_text_secondary"
+        android:textSize="12sp" />
+            </LinearLayout>
+            <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp">
+                <com.google.android.material.button.MaterialButton
+        android:id="@+id/library_tools" style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="48dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/library_tools"
+        app:icon="@drawable/ic_tune" />
+                <com.google.android.material.button.MaterialButton
+        android:id="@+id/library_view_toggle" style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="@string/view_mode"
+        app:icon="@drawable/ic_library" />
+            </LinearLayout>
+            <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp">
+                <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+                    <TextView
+        android:id="@+id/filter_all"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:gravity="center"
+        android:background="@drawable/bg_filter"
+        android:foreground="?attr/selectableItemBackground"
+        android:text="@string/filter_all"
+        android:textSize="12sp"
+        android:textColor="@color/nexus_text"
+        android:clickable="true"
+        android:focusable="true" />
+                    <TextView
+        android:id="@+id/filter_favorites"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:gravity="center"
+        android:background="@drawable/bg_filter"
+        android:foreground="?attr/selectableItemBackground"
+        android:text="@string/filter_favorites"
+        android:textSize="12sp"
+        android:textColor="@color/nexus_text"
+        android:clickable="true"
+        android:focusable="true" />
+                    <TextView
+        android:id="@+id/filter_unwatched"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:gravity="center"
+        android:background="@drawable/bg_filter"
+        android:foreground="?attr/selectableItemBackground"
+        android:text="@string/filter_unwatched"
+        android:textSize="12sp"
+        android:textColor="@color/nexus_text"
+        android:clickable="true"
+        android:focusable="true" />
+                    <TextView
+        android:id="@+id/filter_hd"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:gravity="center"
+        android:background="@drawable/bg_filter"
+        android:foreground="?attr/selectableItemBackground"
+        android:text="@string/filter_hd"
+        android:textSize="12sp"
+        android:textColor="@color/nexus_text"
+        android:clickable="true"
+        android:focusable="true" />
+                    <TextView
+        android:id="@+id/filter_recent"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:gravity="center"
+        android:background="@drawable/bg_filter"
+        android:foreground="?attr/selectableItemBackground"
+        android:text="@string/filter_recent"
+        android:textSize="12sp"
+        android:textColor="@color/nexus_text"
+        android:clickable="true"
+        android:focusable="true" />
+                </LinearLayout>
+            </HorizontalScrollView>
+        </com.google.android.material.appbar.AppBarLayout>
+        <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:padding="12dp"
+        android:scrollbars="vertical" />
+            <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:indeterminateTint="@color/nexus_accent" />
+            <LinearLayout
+        android:id="@+id/empty_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp"
+        android:visibility="gone">
+                <ImageView
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_video_placeholder"
+        app:tint="@color/nexus_text_secondary" />
+                <TextView
+        android:id="@+id/empty_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/no_videos_found"
+        android:textColor="@color/nexus_text_secondary"
+        android:textSize="16sp"
+        android:gravity="center" />
+                <com.google.android.material.button.MaterialButton
+        android:id="@+id/grant_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/grant_access"
+        android:visibility="gone"
+        app:backgroundTint="@color/nexus_accent" />
+            </LinearLayout>
+            <LinearLayout
+        android:id="@+id/error_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp"
+        android:visibility="gone">
+                <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/load_failed"
+        android:textColor="@color/nexus_text"
+        android:textSize="16sp" />
+                <com.google.android.material.button.MaterialButton
+        android:id="@+id/retry_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/retry"
+        app:backgroundTint="@color/nexus_accent" />
+            </LinearLayout>
+        </FrameLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        android:background="@color/nexus_surface"
+        android:paddingTop="8dp"
+        android:paddingBottom="4dp">
+        <TextView
+        android:id="@+id/nav_library"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:drawableTop="@drawable/ic_library"
+        android:drawableTint="@color/nexus_accent"
+        android:drawablePadding="4dp"
+        android:text="@string/nav_library"
+        android:textSize="10sp"
+        android:textColor="@color/nexus_accent"
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true" />
+        <TextView
+        android:id="@+id/quick_folders"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:drawableTop="@drawable/ic_folder"
+        android:drawableTint="@color/nexus_text_secondary"
+        android:drawablePadding="4dp"
+        android:text="@string/action_folders"
+        android:textSize="10sp"
+        android:textColor="@color/nexus_text_secondary"
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true" />
+        <TextView
+        android:id="@+id/nav_playlists"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:drawableTop="@drawable/ic_playlist"
+        android:drawableTint="@color/nexus_text_secondary"
+        android:drawablePadding="4dp"
+        android:text="@string/action_playlists"
+        android:textSize="10sp"
+        android:textColor="@color/nexus_text_secondary"
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true" />
+        <TextView
+        android:id="@+id/nav_music"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:drawableTop="@drawable/ic_music"
+        android:drawableTint="@color/nexus_text_secondary"
+        android:drawablePadding="4dp"
+        android:text="@string/music"
+        android:textSize="10sp"
+        android:textColor="@color/nexus_text_secondary"
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true" />
+        <TextView
+        android:id="@+id/nav_settings"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:drawableTop="@drawable/ic_settings"
+        android:drawableTint="@color/nexus_text_secondary"
+        android:drawablePadding="4dp"
+        android:text="@string/action_settings"
+        android:textSize="10sp"
+        android:textColor="@color/nexus_text_secondary"
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true" />
+    </LinearLayout>
+</LinearLayout>

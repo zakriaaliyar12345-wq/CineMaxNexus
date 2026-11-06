@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VISUAL_USER_SELECTED" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <!-- Only pre-Android 10 needs this: trimmed clips are written straight to the Movies
+         folder there. From 10 up the MediaStormae insert is used instead and needs nothing. -->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROCESSING" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Course 07.2: checked before opening a network stream so an offline device gets a
+         clear message instead of a playback error ten seconds later. -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Sleep timer uses an exact wall-clock alarm so it fires in Doze; on Android 12+
+         the user can revoke this in Settings > Alarms & reminders, and the app then
+         falls back to an inexact alarm plus the on-screen countdown. -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
+    <application
+        android:name=".NexusApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:localeConfig="@xml/locales_config"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CineMaxNexus"
+        tools:targetApi="34">
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.SettingsActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".ui.MainActivity" />
+
+        <activity
+            android:name=".ui.FoldersActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".ui.MainActivity" />
+
+        <activity
+            android:name=".ui.FolderVideosActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".ui.FoldersActivity" />
+
+        <activity
+            android:name=".ui.PlaylistsActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".ui.MainActivity" />
+
+        <activity
+            android:name=".ui.PlaylistDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".ui.PlaylistsActivity" />
+
+        <activity
+            android:name=".ui.HistoryActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".ui.MainActivity" />
+
+        <activity
+            android:name=".ui.PrivateActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".ui.MainActivity" />
+
+        <activity
+            android:name=".player.PlayerActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|smallestScreenSize|uiMode"
+            android:launchMode="singleTask"
+            android:supportsPictureInPicture="true"
+            android:theme="@style/Theme.CineMaxNexus.Player" />
+
+        <activity android:name=".music.MusicActivity" android:exported="false" android:parentActivityName=".ui.MainActivity" />
+        <service android:name=".music.MusicPlaybackService" android:exported="true" android:foregroundServiceType="mediaPlayback">
+            <intent-filter><action android:name="androidx.media3.session.MediaSessionService" /></intent-filter>
+        </service>
+        <service
+            android:name=".player.PlaybackService"
+            android:exported="true"
+            android:foregroundServiceType="mediaPlayback">
+            <intent-filter>
+                <action android:name="androidx.media3.session.MediaSessionService" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".study.StudyActivity" android:exported="false" android:parentActivityName=".ui.MainActivity" />
+        <service android:name=".study.StudyProcessingService" android:exported="false" android:foregroundServiceType="dataSync|mediaProcessing" />
+        <provider android:name="androidx.core.content.FileProvider" android:authorities="${applicationId}.studyfiles" android:exported="false" android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/study_paths" />
+        </provider>
+        <!-- Sleep-timer alarm target (course topic 08.2). Not exported: only this app's
+             AlarmManager PendingIntent reaches it. -->
+        <receiver
+            android:name=".player.SleepTimerReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.cinemax.nexus.action.SLEEP_TIMER" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
+            android:enabled="false" android:exported="false">
+            <meta-data android:name="autoStoreLocales" android:value="true" />
+        </service>
+
+        <!-- Daily stale-row cleanup (course topic 08.3, JobScheduler). -->
+        <service
+            android:name=".job.StaleStateJobService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+    </application>
+
+</manifest>

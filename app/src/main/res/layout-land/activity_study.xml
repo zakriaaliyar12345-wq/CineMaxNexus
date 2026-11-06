@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/study_root" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal" android:baselineAligned="false" android:background="@color/nexus_black">
+    <LinearLayout android:layout_width="244dp" android:layout_height="match_parent" android:orientation="vertical">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="56dp" android:gravity="center_vertical" android:paddingHorizontal="8dp">
+            <ImageButton android:id="@+id/study_back" style="@style/MusicIcon" android:src="@drawable/ic_back" android:contentDescription="@string/back" />
+            <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="@string/study_workspace" android:textSize="17sp" android:textStyle="bold" android:textColor="@color/nexus_text" android:maxLines="1" android:ellipsize="end" />
+            <ImageButton android:id="@+id/study_export_notes" style="@style/MusicIcon" android:src="@drawable/ic_share" android:contentDescription="@string/study_export_notes" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingHorizontal="20dp">
+            <TextView android:id="@+id/study_video_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="15sp" android:textStyle="bold" android:textColor="@color/nexus_accent" android:maxLines="1" android:ellipsize="end" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginVertical="8dp">
+                <TextView android:id="@+id/study_at" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:textSize="12sp" android:textColor="@color/nexus_text_secondary" />
+                <TextView android:id="@+id/study_summary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="12sp" android:textColor="@color/nexus_text_secondary" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="48dp">
+                <com.google.android.material.button.MaterialButton android:id="@+id/study_add_note" style="@style/Widget.Material3.Button.TonalButton" android:layout_width="0dp" android:layout_weight="1" android:layout_height="48dp" android:text="@string/study_note_short" android:contentDescription="@string/study_note_default" android:paddingHorizontal="4dp" android:minWidth="0dp" android:singleLine="true" android:textSize="12sp" android:layout_marginEnd="6dp" app:cornerRadius="12dp" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/study_snapshot" style="@style/Widget.Material3.Button.TonalButton" android:layout_width="0dp" android:layout_weight="1" android:layout_height="48dp" android:text="@string/study_shot_short" android:contentDescription="@string/study_snapshot" android:paddingHorizontal="4dp" android:minWidth="0dp" android:singleLine="true" android:textSize="12sp" android:layout_marginEnd="6dp" app:cornerRadius="12dp" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/study_add_clip" style="@style/Widget.Material3.Button.TonalButton" android:layout_width="0dp" android:layout_weight="1" android:layout_height="48dp" android:text="@string/study_clip_short" android:contentDescription="@string/study_clip_default" android:paddingHorizontal="4dp" android:minWidth="0dp" android:singleLine="true" android:textSize="12sp" app:cornerRadius="12dp" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="16dp" android:gravity="center_vertical">
+            <TextView android:id="@+id/study_job_status" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:paddingVertical="8dp" android:text="@string/study_ready" android:textColor="@color/nexus_text_secondary" android:textSize="12sp" android:maxLines="3" android:ellipsize="end" />
+            <ImageButton android:id="@+id/study_cancel_job" style="@style/MusicIcon" android:src="@drawable/ic_back" android:contentDescription="@string/cancel" android:visibility="gone" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="12dp" android:orientation="vertical">
+            <com.google.android.material.button.MaterialButton android:id="@+id/study_import" style="@style/Widget.Material3.Button.TextButton" android:layout_width="match_parent" android:layout_height="48dp" android:text="@string/study_import_text" android:textSize="12sp" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/study_index" style="@style/Widget.Material3.Button.TextButton" android:layout_width="match_parent" android:layout_height="48dp" android:text="@string/study_index_speech" android:textSize="12sp" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/study_use_captions" style="@style/Widget.Material3.Button.TextButton" android:layout_width="match_parent" android:layout_height="48dp" android:text="@string/study_use_captions" android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:orientation="vertical" android:paddingEnd="12dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="12dp">
+            <TextView android:id="@+id/study_tab_transcript" style="@style/MusicFilter" android:text="@string/study_tab_transcript" />
+            <TextView android:id="@+id/study_tab_notes" style="@style/MusicFilter" android:text="@string/study_tab_notes" />
+            <TextView android:id="@+id/study_tab_clips" style="@style/MusicFilter" android:text="@string/study_tab_clips" />
+            <TextView android:id="@+id/study_tab_shots" style="@style/MusicFilter" android:text="@string/study_tab_shots" />
+        </LinearLayout>
+        <EditText android:id="@+id/study_search" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginVertical="12dp" android:background="@drawable/bg_studio_panel" android:paddingHorizontal="14dp" android:hint="@string/study_search_hint" android:inputType="text" android:singleLine="true" android:imeOptions="actionSearch" android:textColor="@color/nexus_text" android:textColorHint="@color/nexus_text_secondary" android:textSize="14sp" />
+        <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/study_list" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="16dp" android:paddingBottom="8dp" android:clipToPadding="false" />
+            <TextView android:id="@+id/study_empty" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="center" android:padding="24dp" android:gravity="center" android:textColor="@color/nexus_text_secondary" android:textSize="14sp" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <color name="nexus_black">#080F19</color>
+    <color name="nexus_surface">#111E2C</color>
+    <color name="nexus_surface_high">#1B2C3D</color>
+    <color name="nexus_accent">#73E3CB</color>
+    <color name="nexus_accent_soft">#2873E3CB</color>
+    <color name="nexus_text">#F3F7FA</color>
+    <color name="nexus_text_secondary">#A2B3C4</color>
+    <color name="nexus_player_controls_bg">#DD08121F</color>
+</resources>

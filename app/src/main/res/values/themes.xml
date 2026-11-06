@@ -1,0 +1,20 @@
+<resources>
+    <style name="Theme.CineMaxNexus" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/nexus_accent</item>
+        <item name="colorOnPrimary">@color/nexus_black</item>
+        <item name="colorSecondary">@color/nexus_accent</item>
+        <item name="colorSurface">@color/nexus_surface</item>
+        <item name="colorOnSurface">@color/nexus_text</item>
+        <item name="colorSecondaryContainer">@color/nexus_surface_high</item>
+        <item name="colorOnSecondaryContainer">@color/nexus_text</item>
+        <item name="android:statusBarColor">@color/nexus_black</item>
+        <item name="android:navigationBarColor">@color/nexus_black</item>
+        <item name="android:windowBackground">@color/nexus_black</item>
+        <item name="android:colorBackground">@color/nexus_black</item>
+    </style>
+
+    <style name="Theme.CineMaxNexus.Player" parent="Theme.CineMaxNexus">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+</resources>

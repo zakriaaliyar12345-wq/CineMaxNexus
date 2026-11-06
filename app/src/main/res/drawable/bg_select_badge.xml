@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Circular chip behind the selection tick in the library grid. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="@color/nexus_accent" />
+    <stroke
+        android:width="2dp"
+        android:color="@android:color/white" />
+</shape>

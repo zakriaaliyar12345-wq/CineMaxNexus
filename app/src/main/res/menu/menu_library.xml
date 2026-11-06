@@ -1,0 +1,96 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_open_video" android:title="@string/open_video" />
+    <item android:id="@+id/action_refresh" android:title="@string/refresh_library" />
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_search"
+        android:title="@string/action_search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView" />
+
+    <item
+        android:id="@+id/action_sort"
+        android:title="@string/sort"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/action_sort_title"
+                android:title="@string/sort_by_title" />
+            <item
+                android:id="@+id/action_sort_date"
+                android:title="@string/sort_by_date" />
+            <item
+                android:id="@+id/action_sort_duration"
+                android:title="@string/sort_by_duration" />
+            <item
+                android:id="@+id/action_sort_size"
+                android:title="@string/sort_by_size" />
+            <item
+                android:id="@+id/action_toggle_order"
+                android:title="@string/toggle_order" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/action_view"
+        android:title="@string/view_mode"
+        app:showAsAction="never">
+        <menu>
+            <item android:id="@+id/action_view_list" android:checkable="true" android:title="@string/view_list" />
+            <item
+                android:id="@+id/action_view_large"
+                android:checkable="true"
+                android:title="@string/view_large" />
+            <item
+                android:id="@+id/action_view_medium"
+                android:checkable="true"
+                android:title="@string/view_medium" />
+            <item
+                android:id="@+id/action_view_compact"
+                android:checkable="true"
+                android:title="@string/view_compact" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/action_select"
+        android:title="@string/select"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_play_url"
+        android:title="@string/play_url"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_hide_watched"
+        android:checkable="true"
+        android:title="@string/hide_watched"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_private"
+        android:title="@string/private_folder"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_app_lock"
+        android:title="@string/app_lock"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_folders"
+        android:title="@string/action_folders"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_playlists"
+        android:title="@string/action_playlists"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_history"
+        android:title="@string/action_history"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+
+</menu>

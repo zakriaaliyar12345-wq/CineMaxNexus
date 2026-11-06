@@ -1,0 +1,5 @@
+<resources>
+<string name="cinema_eyebrow">سینمای شخصی شما</string><string name="cinema_headline">یک داستان زیبا.
+تنها با یک لمس.</string><string name="immersive_music_headline">ریتم خود را پیدا کنید.</string>
+<string name="lyrics">متن آهنگ</string><string name="lyrics_import">افزودن LRC</string><string name="lyrics_empty">فایل زمان‌بندی‌شدهٔ LRC این آهنگ را اضافه کنید. برای رفتن به هر بخش، روی متن آن بزنید.</string><string name="lyrics_error">فایل معتبر LRC با کدگذاری UTF-8 و حجم کمتر از یک مگابایت انتخاب کنید.</string><string name="lyrics_loaded">متن به این آهنگ اضافه شد</string><string name="music_artwork">تصویر آلبوم</string><string name="music_ambience">تغییر رنگ پخش‌کننده</string><string name="ambience_artwork">رنگ‌های آلبوم</string><string name="ambience_midnight">آبی نیمه‌شب</string><string name="ambience_amoled">مشکی AMOLED</string>
+</resources>

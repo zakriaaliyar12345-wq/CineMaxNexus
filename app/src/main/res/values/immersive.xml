@@ -1,0 +1,6 @@
+<resources>
+<style name="Shape.NexusCover" parent=""><item name="cornerFamily">rounded</item><item name="cornerSize">20dp</item></style>
+<string name="cinema_eyebrow">YOUR PERSONAL CINEMA</string><string name="cinema_headline">A great story.
+One tap away.</string><string name="immersive_music_headline">Find your rhythm.</string>
+<string name="lyrics">Lyrics</string><string name="lyrics_import">Import LRC</string><string name="lyrics_empty">Add a timed .lrc file for this song. Lyrics follow playback; tap a line to jump to it.</string><string name="lyrics_error">Could not load timed lyrics. Choose a valid UTF-8 LRC file under 1 MB.</string><string name="lyrics_loaded">Lyrics added to this song</string><string name="music_artwork">Artwork</string><string name="music_ambience">Change player colors</string><string name="ambience_artwork">Artwork colors</string><string name="ambience_midnight">Midnight blue</string><string name="ambience_amoled">AMOLED black</string>
+</resources>

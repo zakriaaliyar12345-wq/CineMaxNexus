@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Lets Android 13+ show CineMax Nexus in the per-app language picker, so the user can
+  choose English or Persian/Dari (Afghanistan) without changing the whole device.
+-->
+<locale-config xmlns:android="http://schemas.android.com/apk/res/android">
+    <locale android:name="en" />
+    <locale android:name="fa-AF" />
+    <locale android:name="fa" />
+</locale-config>
